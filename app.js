@@ -98,7 +98,7 @@ app.post('/buy', function (req, res) {
         /**** RETORNO AUTOMATICO ****/ 
         auto_return: 'approved',
         /**** URL NOTIFICACIONES DE PAGO ****/ 
-        notification_url: host+'notifications',
+        notification_url: host+'notification',
     }
     
     
