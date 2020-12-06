@@ -68,7 +68,7 @@ app.post('/buy', function (req, res) {
             email: 'test_user_63274575@testuser.com',
             phone:{
                 area_core: '11',
-                number: 22223333, //SDK Erroneo, va como integer, no string
+                number: 22223333, //SDK Erroneo, va como integer ya que como string no lo toma y solicita number.
             },
             address:{
                 street_name: 'False',
@@ -95,10 +95,10 @@ app.post('/buy', function (req, res) {
             pending: url + 'pending',
             failure: url + 'failure',
         },
-        /**** URL NOTIFICACIONES DE PAGO ****/ 
-        notification_url: host+'notification',
         /**** RETORNO AUTOMATICO ****/ 
         auto_return: 'approved',
+        /**** URL NOTIFICACIONES DE PAGO ****/ 
+        notification_url: host+'webhooks',
     }
     
     
@@ -113,9 +113,9 @@ app.post('/buy', function (req, res) {
     
 });
 
-app.post('/notification', function (req, res) {
+app.post('/webhooks', function (req, res) {
     console.log('*** webhook *** -->> '+ req.body)
-    res.status(200).end('ok');
+    res.status(200).send(req.body);
 });
 
 
