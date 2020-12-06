@@ -84,7 +84,12 @@
                                     {{ unit }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+
+
+                            <form action="/buy" method="POST">
+                                <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+							</form>
+
                         </div>
                     </div>
                 </div>
@@ -93,3 +98,5 @@
     </div>
 </div>
    
+
+   <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
