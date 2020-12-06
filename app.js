@@ -95,10 +95,10 @@ app.post('/buy', function (req, res) {
             pending: url + 'pending',
             failure: url + 'failure',
         },
-        /**** RETORNO AUTOMATICO ****/ 
-        auto_return: 'approved',
         /**** URL NOTIFICACIONES DE PAGO ****/ 
         notification_url: host+'notification',
+        /**** RETORNO AUTOMATICO ****/ 
+        auto_return: 'approved',
     }
     
     
@@ -114,8 +114,7 @@ app.post('/buy', function (req, res) {
 });
 
 app.post('/notification', function (req, res) {
-    console.log('webhook'+ req.body)
-    console.log( 'el envio por consola funciona' )
+    console.log('*** webhook *** -->> '+ req.body)
     res.status(200).end('ok');
 });
 
