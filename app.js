@@ -114,8 +114,9 @@ app.post('/buy', function (req, res) {
 });
 
 app.post('/notification', function (req, res) {
-    console.log('webhook', req.body)
-    res.status(200).send(req.body).end('ok');
+    console.log('webhook'+ req.body)
+    console.log( 'el envio por consola funciona' )
+    res.status(200).end('ok');
 });
 
 
