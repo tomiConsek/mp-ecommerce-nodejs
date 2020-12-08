@@ -51,7 +51,7 @@ app.get('/callback', function (req, res) {
 });
 
 app.post('/buy', function (req, res) {
-    const host= 'http://localhost:3000/' //'https://tomiconsek-mp-commerce-nodejs.herokuapp.com/' //'http://localhost:3000/'
+    const host= 'https://tomiconsek-mp-commerce-nodejs.herokuapp.com/' //'https://tomiconsek-mp-commerce-nodejs.herokuapp.com/' //'http://localhost:3000/'
     const url= host + 'callback?status='
     
     let preference = {
