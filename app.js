@@ -26,7 +26,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
+    let elQuery = req.query
+    res.render('detail', {elQuery:elQuery});
 });
 
 app.get('/callback', function (req, res) {
@@ -50,7 +51,7 @@ app.get('/callback', function (req, res) {
 });
 
 app.post('/buy', function (req, res) {
-    const host= 'https://tomiconsek-mp-commerce-nodejs.herokuapp.com/' //'http://localhost:3000/'
+    const host= 'http://localhost:3000/' //'https://tomiconsek-mp-commerce-nodejs.herokuapp.com/' //'http://localhost:3000/'
     const url= host + 'callback?status='
     
     let preference = {
@@ -83,11 +84,11 @@ app.post('/buy', function (req, res) {
         items: [
             {
                 id: 1234,
-                title: 'Nombre del producto seleccionado del carrito del ejercicio',
+                title: req.body.title,
                 description: 'Dispositivo móvil de Tienda e-commerce',
                 picture_url: 'https://www.consekcomp.com/img/logo/logo.png',
                 quantity: 1,
-                unit_price: 3000,
+                unit_price: Number(req.body.price),
             }
         ],
         /**** EMAIL DEVELOPER ****/
