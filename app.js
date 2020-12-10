@@ -61,9 +61,10 @@ app.post('/buy', function (req, res) {
             excluded_payment_methods:[
                 {id:'amex'}
             ],
-            excluded_payment_type : [
+            excluded_payment_types: [
                 {id:'atm'}
             ],
+            
         },
         /**** INFORMACION DEL PAGADOR ****/
         payer:{
@@ -71,7 +72,7 @@ app.post('/buy', function (req, res) {
             surname: 'Landa',
             email: 'test_user_63274575@testuser.com',
             phone:{
-                area_core: '11',
+                area_code: '11',
                 number: 22223333, //SDK Erroneo, va como integer ya que como string no lo toma y solicita number.
             },
             address:{
